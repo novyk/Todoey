@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // muestra la ruta donde están los ficheros de nuestra app en el ordenador
         // print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+ 
+        do {
+            let realm = try Realm()
+            
+        } catch  {
+            print("Error initializing Realm \(error)")
+        }
+        
+        
+        
         
         return true
     }
